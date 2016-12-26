@@ -5,20 +5,25 @@ import com.gargoylesoftware.htmlunit.html.*;
 import com.matthewdiana.verifyvanity.checkers.StateChecker;
 
 import java.io.IOException;
+import java.time.Instant;
 
 public class NewYorkChecker implements StateChecker {
 
     private static final String FORM_URL = "https://transact2.dmv.ny.gov/PlatesPersonalized";
 
     private String requestedPlate;
+    private String checkTime;
 
     public NewYorkChecker(String requestedPlate) {
         this.requestedPlate = requestedPlate;
+        this.checkTime = Instant.now().toString();
     }
 
     public String getRequestedPlate() {
         return requestedPlate;
     }
+
+    public String getCheckTime() { return checkTime; }
 
     @Override
     public boolean isValid() {

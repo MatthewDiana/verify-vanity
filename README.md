@@ -1,6 +1,6 @@
 # Verify Vanity
 
-A web API written with the Spring framework that can be used to verify that your favorite vanity 
+A web API written with the Spring framework that can be used to check that your favorite vanity 
 license plate is available.
 
 ## Getting Started
@@ -30,12 +30,45 @@ mvn package
 Start up the web server:
 
 ```
-java -jar verify-vanity-*.jar
+java -jar target/verify-vanity-*.jar
 ```
 
 ## API
 
-todo
+Using the API is as simple as sending a GET request to `/check` with the req parameters:
+
+* `plateNum` - license plate number
+* `state` - state to run check on
+    * Support is only provided for `ny`
+
+Example:
+```
+GET localhost:8080/check?plateNum=MATT&state=ny
+```
+
+Response object:
+
+```
+{
+    "requestedPlate": "MATT",
+    "checkTime": "2016-12-26T22:58:03.221Z"
+    "valid": true,
+    "available": false
+}
+```
+* `requestedPlate` - plate number checked
+* `checkTime` - time this plate check was performed
+* `valid` - if the plate is a valid format
+* `available` - if the plate is currently available
+
+## Sample App
+
+A sample application that uses the API can found
+at the `/` route:
+
+`localhost:8080/`
+
+The source for this app can be found in `src/main/resources/public`.
 
 ## Run the Tests
 
