@@ -3,6 +3,8 @@
 A web API written with the Spring framework that can be used to check that your favorite vanity 
 license plate is available.
 
+![Sample verify-vanity app](http://i.imgur.com/0JwcTEl.png)
+
 ## Getting Started
 
 ### Prerequisites
