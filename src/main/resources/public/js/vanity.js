@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#checkButton').click(function() {
         $('#checkButton').prop('disabled', true).html('<i class="fa fa-refresh fa-spin fa-fw"></i> Checking...');
         $('#checkResult').empty();
-        $.get('/check?plateNum=' + $('#licensePlateNum').val()).done(function(license) {
+        $.get('/check?plateNum=' + $('#licensePlateNum').val() + "&state=ny").done(function(license) {
             if (license.available) {
                 $('<div class="alert alert-success" role="alert">This license plate is available!</div>')
                     .appendTo('#checkResult');

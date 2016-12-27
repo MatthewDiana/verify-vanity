@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CheckingController {
 
     @RequestMapping("/check")
-    public StateChecker check(@RequestParam(value="plateNum") String plateNum) {
-
+    public StateChecker check(@RequestParam(value="plateNum") String plateNum,
+                              @RequestParam(value="state") String state) {
         return new NewYorkChecker(plateNum);
-
     }
 
 }
