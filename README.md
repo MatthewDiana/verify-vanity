@@ -82,7 +82,7 @@ mvn test
 
 ## Built With
 * [Spring](https://spring.io/) - App / web framework
-* [Maven](https://spring.io/) - Build tool
+* [Maven](https://maven.apache.org/) - Build tool
 * [HtmlUnit](http://htmlunit.sourceforge.net/) - Browser emulator
 * Bootstrap/jQuery/FontAwesome - The example page
 
